@@ -2,3 +2,6 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+
+# tell Rack (and Sprockets) about modern font MIME types:
+Rack::Mime::MIME_TYPES['.woff'] = 'application/x-font-woff'

@@ -1,4 +1,15 @@
-<div>
-  <h4> Comment by <%= comment.author_name %></h4>
-  <p class="comment"><%= comment.body %></p>
+<div class="panel panel-default" style="max-width: 50%;">
+  <div class="panel-heading" style="padding: 4px;">
+    <div style="display: inline-block;">
+      <h4 style="font-style: oblique;"> Comment by <%= comment.author_name %></h4>
+    </div>
+    <div style="display: inline-block; float: right;">
+      <%= link_to '', [comment.article, comment], method: :delete, 
+    data: {confirm: "Confirm Delete Comment"}, :class=>"glyphicon glyphicon-remove"%>
+    </div>
+  </div>
+  <div class="panel-body" style="padding: 8px;">
+    <p class="comment"><%= comment.body %></p>
+    <small>Posted <%= distance_of_time_in_words_to_now(comment.created_at) %> ago</small>
+  </div>
 </div>
