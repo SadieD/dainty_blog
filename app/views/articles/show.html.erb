@@ -5,6 +5,12 @@
 <%= @article.body %>
 </p>
 </div>
+<div>
+  <% @article.tags.each do |t| %>
+    <button type="button" class="btn btn-info"><%= t.name %></button>
+  <% end %>
+</div>
+</br>
 <%= link_to 'Back', articles_path %>  |  
 <%= link_to 'Edit', edit_article_path(@article) %>  |  
 <%= link_to 'Delete', article_path(@article), method: :delete, 
