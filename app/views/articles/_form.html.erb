@@ -1,9 +1,7 @@
 <%= form_for @article do |f| %>
-  <ul>
   <% @article.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+    <% flash[:error] = error %>
   <% end %>
-  </ul>
   
   <p>
     <%= f.label :title %></br>

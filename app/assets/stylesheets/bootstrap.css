@@ -5790,6 +5790,26 @@ button.list-group-item-danger.active:focus {
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ebccd1;
 }
+
+.panel-error {
+  border-color: #ebccd1;
+}
+.panel-error > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.panel-error > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+.panel-error > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.panel-error > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+
 .embed-responsive {
   position: relative;
   display: block;

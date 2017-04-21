@@ -1,5 +1,7 @@
-<div class="panel panel-success" style="position: absolute; margin: 10px;">
-  <div class="panel-heading" style="float: inherit;">
-    <div class="flash" style="float: inherit;"><%= flash.notice %></div>
+<% flash.each do |key, value| %>
+<div class="boop panel panel-<%= key %>" style="position: absolute; margin: 10px;">
+  <div class="panel-heading">
+    <div class="flash"><%= value %></div>
   </div>
 </div>
+<% end %>

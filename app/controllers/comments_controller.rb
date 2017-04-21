@@ -5,8 +5,12 @@ class CommentsController < ApplicationController
     @comment.article_id = params[:article_id]
     
     @comment.save
-    
-    redirect_to article_path(@comment.article)
+    if @comment.save
+      redirect_to article_path(@comment.article)
+    else
+      flash[:error] = "Invalid Comment Input"
+			redirect_to article_path(@comment.article)
+		end
   end
   
 	def destroy

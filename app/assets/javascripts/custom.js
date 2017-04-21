@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function () {
   if ($(".flash").text().length > 0) {
     setTimeout(function() {
-      $(".panel-success").fadeOut('fast');
-      }, 3000)
+      $(".boop").fadeOut('fast');
+      }, 2000)
   } else {
-    $(".panel-success").hide();
+    $(".boop").hide();
   }
 });
