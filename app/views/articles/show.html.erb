@@ -1,9 +1,8 @@
 <h1><%= @article.title %></h1>
+<p class="center"><%= image_tag @article.image.url(:medium) %></p>
 <p><small>Created - <%= @article.created_at.strftime("%Y-%m-%d") %></small></p>
-<p>
-<div class="panel panel-default" style="padding: 5px; min-height: 200px;">
-<%= @article.body %>
-</p>
+<div class="panel panel-default" style="margin: 0 50px 10px 50px ; padding: 5px; min-height: 200px;">
+  <%= @article.body %>
 </div>
 <div style="padding: 5px; min-height: 50px;">
   <% @article.tags.each do |tag| %>
