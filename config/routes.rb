@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :articles do
-    resources :comments
-  end
   
   root to: 'articles#index'
+  
+  resources :articles do
+    resources :comments   # comments nested in articles
+  end
+  
+  resources :tags
 
 end

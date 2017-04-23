@@ -5,9 +5,9 @@
 <%= @article.body %>
 </p>
 </div>
-<div>
-  <% @article.tags.each do |t| %>
-    <button type="button" class="btn btn-info"><%= t.name %></button>
+<div style="padding: 5px; min-height: 50px;">
+  <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag), class: "btn btn-info" %>
   <% end %>
 </div>
 </br>
