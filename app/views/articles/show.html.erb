@@ -1,5 +1,9 @@
 <h1><%= @article.title %></h1>
-<p class="center"><%= image_tag @article.image.url(:medium) %></p>
+<% if @article.image? %>
+  <p class="center">
+    <%= image_tag @article.image.url(:medium) %>
+  </p>
+<% end %>
 <p><small>Created - <%= @article.created_at.strftime("%Y-%m-%d") %></small></p>
 <div class="panel panel-default" style="margin: 0 50px 10px 50px ; padding: 5px; min-height: 200px;">
   <%= @article.body %>
