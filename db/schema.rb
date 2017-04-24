@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423224913) do
+ActiveRecord::Schema.define(version: 20170424015609) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170423224913) do
     t.string   "salt"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "username"
     t.index ["email"], name: "index_authors_on_email", unique: true
   end
 

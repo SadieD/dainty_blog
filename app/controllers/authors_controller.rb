@@ -18,7 +18,6 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
-    redirect_to root_path
   end
 
   # GET /authors/new
@@ -28,6 +27,7 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
+    @author = Author.find(params[:id])
   end
 
   # POST /authors
