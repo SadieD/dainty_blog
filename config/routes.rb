@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :comments   # comments nested in articles
   end
   
-  resources :tags
+  resources :tags, :authors
+  resources :author_sessions, only: [ :new, :create, :destroy ]
+  
+  get 'login' => 'author_sessions#new'
+  get 'logout' => 'author_sessions#destroy'
 
 end

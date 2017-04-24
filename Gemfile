@@ -32,7 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Handles file uploads, and image manipulation with imagemagick
 gem 'paperclip'
+
+# User authentication
+gem 'sorcery'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
