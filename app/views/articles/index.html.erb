@@ -1,6 +1,7 @@
 <h1>All Articles</h1>
 
 <ul id="articles">
+  </br>
   <% @articles.each do |article| %>
     <li>
       <h4 style="line-height: 1px;"><%= link_to article.title, article_path(article) %></h4>
