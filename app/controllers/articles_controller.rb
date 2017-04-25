@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @author = Author.find(@article.author_id)
     
+    @article.view_counter
+    
     @comment = Comment.new
     @comment.article_id = @article.id
   end

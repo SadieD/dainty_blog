@@ -3,8 +3,13 @@
 <ul id="articles">
   <% @articles.each do |article| %>
     <li>
-      <%= link_to article.title, article_path(article) %>
+      <h4 style="line-height: 1px;"><%= link_to article.title, article_path(article) %></h4>
+        <small><i>Created <%= article.created_at.strftime("%Y-%m-%d") %></i></small>
+      <p>
+        <%= article.slug %>...
+      </p>
     </li>
+    </br>
   <% end %>
 </ul>
 

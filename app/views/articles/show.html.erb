@@ -11,14 +11,19 @@
 <div class="panel panel-default" style="margin: 0 50px 10px 50px ; padding: 5px; min-height: 200px;">
   <%= @article.body %>
 </div>
-<div style="padding: 5px; min-height: 50px;">
+<div style="margin: 5px; min-height: 50px;">
+  <div style="display: inline-block; width:90%;">
   <% @article.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag), class: "btn btn-info" %>
   <% end %>
+  </div>
+  <div style="display: inline-block; line-height:100%;">
+    <h3><%= @article.views %> Views</h3>
+  </div>
 </div>
 </br>
 <%= link_to 'Back', articles_path %>
-<% if logged_in? %>
+<% if @author.id == current_user.id %>
     |  
   <%= link_to 'Edit', edit_article_path(@article) %>  |  
   <%= link_to 'Delete', article_path(@article), method: :delete, 

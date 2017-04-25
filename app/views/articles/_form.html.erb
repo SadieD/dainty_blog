@@ -1,32 +1,49 @@
-<%= form_for(@article, html: {multipart: true}) do |f| %>
+<%= form_for(@article, html: {multipart: true}, :class => "form-group") do |f| %>
   <% @article.errors.full_messages.each do |error| %>
     <% flash[:error] = error %>
   <% end %>
-  
+  <div style="margin-top: 50px;">
+    <div>
+      <div style="display: inline-block; vertical-align: top;">
+        <%= f.label :title %></br>
+      </div>
+      <div style="display: inline-block; width: 40%;">
+        <%= f.text_field :title, :class => "form-control", :id => "inputsm" %>
+      </div>
+    </div>
+    
+    <div>
+      <div style="display: inline-block; margin-top: 30px; vertical-align: top;">
+        <%= f.label :body %></br>
+      </div>
+      <div style="display: inline-block; width: 80%;">
+        <%= f.text_area :body, :class => "form-control", :id => "inputsm", :style => "height: 200px;" %>
+      </div>
+    </div>
+    
+    <div>
+      <div style="display: inline-block; margin-top: 30px; vertical-align: top;">
+        <%= f.label :tag_list %>
+      </div>
+      <div style="display: inline-block; width: 30%;">
+        <%= f.text_field :tag_list, :class => "form-control", :id => "inputsm"  %>
+      </div>
+    </div>
+    
+    <div>
+      <div style="display: inline-block; margin-top: 30px;">
+        <% if @article.image.exists? %>
+          <%= image_tag @article.image.url(:thumb) %><br />
+        <% end %>
+        <%= f.label :image, "Attach a New Image", :style => "vertical-align: top;" %><br />
+      </div>
+      <div style="display: inline-block; width: 30%;">
+        <%= f.file_field :image, :class => "btn btn-default"  %>
+      </div>
+    </div>
+  </div>
+  <br />
   <p>
-    <%= f.label :title %></br>
-    <%= f.text_field :title %>
-  </p>
-  
-  <p>
-    <%= f.label :body %></br>
-    <%= f.text_area :body %>
-  </p>
-  
-  <p>
-    <%= f.label :tag_list %></br>
-    <%= f.text_field :tag_list %>
-  </p>
-  
-  <p>
-    <% if @article.image.exists? %>
-      <%= image_tag @article.image.url(:thumb) %><br />
-    <% end %>
-    <%= f.label :image, "Attach a New Image" %><br />
-    <%= f.file_field :image %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => "btn btn-default" %>
   </p>
 <% end %>
