@@ -23,13 +23,14 @@
 </div>
 </br>
 <%= link_to 'Back', articles_path %>
-<% if @author.id == current_user.id %>
-    |  
-  <%= link_to 'Edit', edit_article_path(@article) %>  |  
-  <%= link_to 'Delete', article_path(@article), method: :delete, 
-      data: {confirm: "Confirm Delete Article"} %>
+<% if logged_in? %>
+  <% if @author.id == current_user.id %>
+      |  
+    <%= link_to 'Edit', edit_article_path(@article) %>  |  
+    <%= link_to 'Delete', article_path(@article), method: :delete, 
+        data: {confirm: "Confirm Delete Article"} %>
+  <% end %>
 <% end %>
-
 <%= render partial: 'comments/form' %>
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
